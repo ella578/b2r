@@ -4,7 +4,7 @@
 
 echo -n "#Architecture: "; uname -a
 
-echo -n "#CPU physical : "; grep -c ^processor /proc/cpuinfo
+echo -n "#CPU physical : "; grep -c processor /proc/cpuinfo
 
 echo -n "#vCPU : "; cat /proc/cpuinfo | grep processor | wc -l
 
