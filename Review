@@ -1,14 +1,13 @@
 # *Evaluation-signature.txt
 ```
-shasum Born2beRoot.vdi
+shasum b2r.vdi
 ```
 
 # Evaluation-MandatoryPart-[Project overview]
 
 ## How a virtual machine works.
 VM working through "Virtualization" technology. 
-Virtualization uses software to simulate virtual hardware that allows 
-VMs to run on a single host machine.
+Virtualization uses software to simulate virtual hardware that allows VMs to run on a single host machine.
 (borrowed CPU, memory, and storage from a physical host computer, such as your personal computer) 
 
 ## Their choice of operating system
@@ -21,21 +20,24 @@ Debian
 *Debian is highly recommended if you are new to system administration.
 
 ## The purpose of virtual machines.
-The big draw of virtualization is to operate multiple displays and even systems — Linux and Windows, for example — from the same console. his allows users to toggle among applications regardless of their OS. And resource consumption with VMware can be remarkably lower than resource consumption with multiple hardware-based systems.
+The big draw of virtualization is to operate multiple displays and even systems — Linux and Windows, for example — from the same console. This allows users
+to toggle among applications regardless of their OS. And resource consumption with VMware can be remarkably lower than resource consumption with
+multiple hardware-based systems.
 
 ## The difference between Apt and Aptitute
-Aptitude is an enhanced version of apt. APT is a lower level package manager and aptitude is a higher level package manager. Another big difference is the functionality offered. Aptitude offers better functionality compared. 
+Aptitude is an enhanced version of apt. APT is a lower level package manager and aptitude is a higher level package manager.
+Another big difference is the functionality offered. Aptitude offers better functionality compared. 
 
 ## What is AppArmor
 A security module of the Linux kernel that allows the system administrator to restrict the capabilities of a program.
 ```
 sudo aa-status
 ```
-
 # Evaluation-MandatoryPart-[Simple setup]
 
 ## Ensure that the machine does not have a graphical environment at launch. 
-(A password will be requested before attempting to connect to this machine.Finally,connect with a user with the help of the student being evaluated. This user must not be root. Pay attention to the password chosen, it must follow the rules imposed in the subject.)
+(A password will be requested before attempting to connect to this machine.Finally,connect with a user with the help of the student being evaluated. 
+This user must not be root. Pay attention to the password chosen, it must follow the rules imposed in the subject.)
 ```
 ls /usr/bin/*session
 ```
@@ -151,7 +153,7 @@ sudo reboot
 hostname
 ```
 
-## How to view the partitions for this virtual machine. (查看分区)
+## How to view the partitions for this virtual machine. 
 (Compare the output with the example given in the subject. Please note: if the student evaluated makes the bonuses, it will be necessary to refer to the bonus example.)(要获得奖金需要手动分配)
 ```
 lsblk
@@ -181,12 +183,12 @@ sudo getent group sudo
 
 - Show you the implementation of the rules imposed by the subject.
 ```
-cat /etc/sudoers.d/sudoconfig
+cat /etc/sudoers.d/sudo_config
 ```
 ```
-Defaults    passwd_tries=3 \\ 3 trise for password
+Defaults        passwd_tries=3 \\ 3 trise for password
 Defaults	badpass_message="Incorrect sudo password, you have total 3 tries."
-Defaults	logfile="/var/log/sudo/sudoconfig" \\ Log all sudo commands to /var/log/sudo/sudoconfig 把所有sudo命令记录到/var/log/sudo/sudoconfig
+Defaults	logfile="/var/log/sudo/sudo_config" \\ Log all sudo commands to /var/log/sudo/sudoconfig 把所有sudo命令记录到/var/log/sudo/sudoconfig
 Defaults	log_input,log_output \\ Archive all sudo inputs & outputs to /var/log/sudo/ 把所有sudo输入和输出存档到/var/log/sudo/
 Defaults	iolog_dir="/var/log/sudo"
 Defaults	requiretty \\ Require TTY 要求TTY
@@ -208,13 +210,13 @@ This option allows you to specify which terminal the sudo command should be run 
 
 (You should see a history of the commands used with sudo.Try to run a command via sudo. See if the file (s) in the "/var/log/sudo/" folder have been updated.)
 ```
-cat /var/log/sudo/sudoconfig
+cat /var/log/sudo/sudo_config
 ```
 ```
 sudo ufw status
 ```
 ```
-cat /var/log/sudo/sudoconfig
+cat /var/log/sudo/sudo_config
 ```
 
 # Evaluation-MandatoryPart-[UFW/Firewalld]
@@ -266,7 +268,7 @@ Secure Shell (SSH) is a network protocol that allows you to remotely connect to 
 which ssh
 ```
 
-- Check that it is working properly. Verify that the SSH service only uses port 4242.
+- Check that it is working properly. Verify that the SSH service only uses port 4241.
 ```
 sudo service ssh status
 ```
