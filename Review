@@ -350,11 +350,14 @@ sudo crontab -u root -e
 */10 * * * * /home/monitoring.sh
 ```
 10 -> 1
-change de 10 mins a une minute
+change de 10 mins a une minute / for 30s, add sleep 30s/
 - cat
 ```
 sudo crontab -u root -l
-```
+
+sudo service cron start
+sudo service cron stop
+sudo service cron restart
 
 # *Power off (0s) [0秒关机]
 ```
